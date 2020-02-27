@@ -40,7 +40,7 @@ g1 = list1.headval.dataval + list2.headval.dataval
 g2 = e2.dataval + f2.dataval 
 g3 = e3.dataval + f3.dataval 
 
-# When one of the digits are ten or above, add to the higher order.
+# When digit is ten or above, add to the higher order.
 if g1 >= 10: 
 	g1 = str(g1)
 	g2 += int(g1[0])  
