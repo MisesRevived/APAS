@@ -1,3 +1,9 @@
+"""
+Function testing if any two numbers in an array add up to a given target number, regardless of the size of the array. 
+The function can also be easily edited to test for other conditions of the two numbers by changing the operator in 
+the conditional on line 12, i.e. to -, *, /, **, or %. 
+"""
+
 nums = [2, 3, 5, 7]
 
 def twosum(target):
