@@ -17,6 +17,10 @@ n = len(nums2)
 
 # Functions 
 def odd_numbers(length): 
+	"""
+	Saving the odd numbers up to the length of the array to later easily 
+	categorize arrays with lengths at odd and even numbers separately. 
+	"""
 	oddNr = []
 	for i in range(1,length+1): 
 		if i % 2 != 0: 
@@ -24,7 +28,11 @@ def odd_numbers(length):
 	return oddNr 
 
 # Main function
-def arrMedian(array, length): # Main function to calculate median based on whether there's only one item in the list, and whether the number is odd or even. 
+def arrMedian(array, length): 
+	""" 
+	Main function to calculate median based on whether there's only one item in the list, 
+	and whether the number is odd or even.
+	"""
 	if length == 1:
 		array_median = list[0]
 		return array_median
@@ -34,7 +42,7 @@ def arrMedian(array, length): # Main function to calculate median based on wheth
 		arr_median = (array[median_floor-1] + array[median_floor])/2 
 		return arr_median
 	elif length in odd_numbers(length):
-		# Setting up a loop for the program to recognize when 
+		# Setting up a loop for the program to recognize when it has reached the middle (median) number, and returning it. 
 		for i in range(length):
 			if i + 1 == length - i: 
 				median = array[i] 
