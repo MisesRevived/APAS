@@ -4,6 +4,17 @@ Description:
 	"There are two sorted arrays nums1 and nums2 of size m and n respectively. 
 	 Find the median of the two sorted arrays. The overall run time complexity should 
 	 be 0(log(m+n)). You may assume nums1 and nums2 cannot be both empty."
+Note: 
+	In this script, the medians are calculated manually. A way quicker and easier way to code it is 
+	by importing the NumPy package and using the median method: 
+	
+	from numpy import median
+	nums1 = [1, 3, 5, 7]
+	nums2 = [2, 4, 6, 8, 10]
+	
+	nums1_median = median(nums1)
+	nums2_median = median(nums2) 
+	nums_median = nums1_median + nums2_median
 """
 
 
