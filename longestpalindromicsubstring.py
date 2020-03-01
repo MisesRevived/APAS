@@ -6,33 +6,44 @@ Description:
 """
 
 # Variables 
-s = "cbaabaabc" 
+s = "ccabccbadd" 
 longest_substr = "" 	
 
+def isPalindromic(string): 
+	# Testing if string is polindromic 
+	len_str = len(string)
+	if len_str % 2 != 0: # Length of list is an odd number.
+		if string[:len_str // 2] == string[-len_str // 2:-1]: # List is symmetric
+			return True 
+		else: 
+			return False 
+	elif len_str % 2 == 0: # Length of list is an even number.		
+		if string[:len_str // 2] == string[-len_str // 2: -1]: # List is symmetric
+			return True 
+		else: 
+			return False 
+
 # Main loop 
-for i in s:
+
+for i in range(len(s)):
+	substr = ""
+
 	# Locating repeating characters. 
-	i_repeat = [j for j in range(len(s)) if s[j] == i] # List comprehension to identify indexes with character i. 
+	i_repeat = [k for k in range(i, len(s)) if s[k] == s[i]] # List comprehension to identify indexes with character s[i]. 
 	len_i_repeat = len(i_repeat)
-	if len_i_repeat > 1: 
-		substr = s[i_repeat[0]:i_repeat[1]+1] # Setting substring from the first index with i to the second. 
-		if substr > longest_substr: 
-			longest_substr = substr
+
+	if len_i_repeat > 1:  
+		substr = s[i_repeat[0]:i_repeat[1]+1] # Setting substring from the first index with the character to the second.  
 
 	# Testing if the characters following the substring can be added to constitute a longer palindromic substring.
 	if len_i_repeat > 2:  
-		for j in range(2, len_i_repeat): 
-			comp_substr = substr + s[i_repeat[j-1]+1:i_repeat[j]+1] # Compounding substring up to the character's next repetition. 
-			for k in range(len(comp_substr)): 
-				if len(comp_substr) % 2 != 0: # Length of list is an odd number.
-					if comp_substr[1:k-1] == comp_substr[-k+1:-1]: # List is symmetric
-						substr = comp_substr
-				elif len(comp_substr) % 2 == 0: # Length of list is an even number.
-					if comp_substr[1:k] == comp_substr[-k:-1]: 
-						longest_substr = comp_substr  
-						substr = comp_substr 
-			if substr > longest_substr: 
-				longest_substr = substr
+		for k in range(1, len_i_repeat): 
+			comp_substr = substr + s[k:k+1] # Compounding substring up to the character's next repetition. 
+			if isPalindromic(comp_substr): 
+				substr = comp_substr
 
-print(longest_substr) 
+	if len(substr) > len(longest_substr): 
+		longest_substr = substr
+
+print("The longest polindromic substring in s is: " + longest_substr) 
 		
