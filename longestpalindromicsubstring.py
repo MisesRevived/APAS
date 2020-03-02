@@ -14,15 +14,10 @@ def isPalindromic(string):
 	len_str = len(string)
 	len_str_halved = len_str // 2
 	if len_str % 2 != 0: # Length of list is an odd number.
-		if string[:len_str_halved] == string[:len_str_halved:-1]: # List is symmetric
-			return True 
-		else: 
-			return False 
+		return string[:len_str_halved] == string[:len_str_halved:-1] # List is symmetric
+
 	elif len_str % 2 == 0: # Length of list is an even number.
-		if string[:len_str_halved] == string[:len_str_halved - 1:-1]: # List is symmetric
-			return True 
-		else: 
-			return False 
+		return string[:len_str_halved] == string[:len_str_halved - 1:-1] # List is symmetric
 	
 # Main loop 
 
@@ -49,3 +44,4 @@ for i in range(len(s)):
 		longest_substr = substr
 
 print("The longest polindromic substring in s is: " + longest_substr) 
+
