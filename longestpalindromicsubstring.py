@@ -16,7 +16,7 @@ def isPalindromic(string):
 	if len_str % 2 != 0: # Length of list is an odd number.
 		return string[:len_str_halved] == string[:len_str_halved:-1] # List is symmetric
 
-	elif len_str % 2 == 0: # Length of list is an even number.
+	else: # Length of list is an even number.
 		return string[:len_str_halved] == string[:len_str_halved - 1:-1] # List is symmetric
 	
 # Main loop 
