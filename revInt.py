@@ -17,5 +17,6 @@ def revInt(int):
 		strInt2 += k
 	return strInt2
 
-rev = revInt(120)
+int = input("Enter 3-digit integer: ")
+rev = revInt(int)
 print(rev)
